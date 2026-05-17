@@ -4,6 +4,7 @@
   var nav = document.getElementById('nav');
   var toggle = document.getElementById('navToggle');
   var links = document.getElementById('navLinks');
+  var backdrop = document.getElementById('navBackdrop');
 
   // Sticky nav background on scroll
   function onScroll() {
@@ -13,20 +14,34 @@
   onScroll();
 
   // Mobile menu
-  function closeMenu() {
-    links.classList.remove('open');
-    nav.classList.remove('menu-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Otwórz menu');
-  }
-  toggle.addEventListener('click', function () {
-    var open = links.classList.toggle('open');
+  var menuOpen = false;
+
+  function setMenu(open) {
+    menuOpen = open;
+    links.classList.toggle('open', open);
     nav.classList.toggle('menu-open', open);
+    document.body.classList.toggle('no-scroll', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
-  });
+    if (open) {
+      backdrop.hidden = false;
+      requestAnimationFrame(function () { backdrop.classList.add('show'); });
+    } else {
+      backdrop.classList.remove('show');
+      setTimeout(function () { if (!menuOpen) backdrop.hidden = true; }, 320);
+    }
+  }
+
+  toggle.addEventListener('click', function () { setMenu(!menuOpen); });
+  backdrop.addEventListener('click', function () { setMenu(false); });
   links.addEventListener('click', function (e) {
-    if (e.target.closest('a')) closeMenu();
+    if (e.target.closest('a')) setMenu(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menuOpen) setMenu(false);
+  });
+  window.addEventListener('resize', function () {
+    if (menuOpen && window.innerWidth > 760) setMenu(false);
   });
 
   // Scroll-reveal
