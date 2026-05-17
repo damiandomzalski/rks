@@ -59,7 +59,7 @@ h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;line-height:1.05;letter-
   border-bottom:1px solid var(--line);padding:.7rem 0}
 .nav__inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .nav__brand{display:flex;align-items:center;gap:.7rem}
-.nav__logo{width:42px;height:42px}
+.nav__logo{width:42px;height:42px;object-fit:contain}
 .nav__name{font-family:'Anton',sans-serif;font-size:1.35rem;line-height:1;letter-spacing:1px}
 .nav__name-sub{display:block;font-family:'Oswald',sans-serif;font-size:.6rem;
   letter-spacing:.22em;color:var(--cream-dim);font-weight:500;margin-top:3px}
@@ -88,7 +88,7 @@ h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;line-height:1.05;letter-
   mask-image:radial-gradient(circle at 50% 40%,#000,transparent 72%);
 }
 .hero__inner{position:relative;display:flex;flex-direction:column;align-items:center}
-.hero__logo{width:130px;height:130px;margin-bottom:1.6rem;
+.hero__logo{width:140px;height:140px;object-fit:contain;margin-bottom:1.6rem;
   filter:drop-shadow(0 8px 30px rgba(197,48,42,.45))}
 .hero__eyebrow{font-family:'Oswald',sans-serif;letter-spacing:.32em;
   text-transform:uppercase;font-size:.85rem;color:var(--cream-dim)}
@@ -203,7 +203,7 @@ h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;line-height:1.05;letter-
   align-items:center;padding-bottom:2rem}
 .footer__brand{display:flex;align-items:center;gap:.7rem;font-family:'Oswald',sans-serif;
   font-weight:600;letter-spacing:.04em}
-.footer__logo{width:40px;height:40px}
+.footer__logo{width:40px;height:40px;object-fit:contain}
 .footer__links{display:flex;gap:1.6rem;flex-wrap:wrap}
 .footer__links a,.footer__social a{font-family:'Oswald',sans-serif;font-size:.9rem;
   color:var(--cream-dim);letter-spacing:.04em;text-transform:uppercase}
