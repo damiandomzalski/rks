@@ -67,8 +67,7 @@ h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;line-height:1.05;letter-
   padding:1.1rem 0;transition:background .3s ease,padding .3s ease;
   padding-top:max(1.1rem,env(safe-area-inset-top));
 }
-.nav.scrolled{background:rgba(12,12,13,.92);backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+.nav.scrolled{background:rgba(12,12,13,.96);
   border-bottom:1px solid var(--line);padding:.7rem 0;
   padding-top:max(.7rem,env(safe-area-inset-top))}
 .nav__inner{padding-inline:max(0px,env(safe-area-inset-left)) max(0px,env(safe-area-inset-right))}
