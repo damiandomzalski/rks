@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="RKS Redzki Klub Sportowy">
+  <defs>
+    <path id="rks-top" d="M60 200 A140 140 0 0 1 340 200" fill="none"/>
+    <path id="rks-bottom" d="M64 200 A136 136 0 0 0 336 200" fill="none"/>
+  </defs>
+  <circle cx="200" cy="200" r="196" fill="#0c0c0d"/>
+  <circle cx="200" cy="200" r="186" fill="none" stroke="#c5302a" stroke-width="9"/>
+  <circle cx="200" cy="200" r="150" fill="none" stroke="#1a1a1b" stroke-width="2"/>
+  <text x="200" y="92" text-anchor="middle" fill="#efe3cf"
+        font-family="Anton, Oswald, Arial Black, sans-serif" font-size="78" letter-spacing="6">RKS</text>
+  <g transform="translate(200 218)">
+    <g transform="rotate(-12)">
+      <rect x="-92" y="-44" width="84" height="92" rx="40" fill="#b5281f"/>
+      <rect x="-92" y="-44" width="84" height="92" rx="40" fill="none" stroke="#7d160f" stroke-width="3"/>
+      <rect x="-86" y="34" width="58" height="30" rx="10" fill="#8f1c15"/>
+      <ellipse cx="-50" cy="-8" rx="14" ry="22" fill="#d4453c" opacity="0.55"/>
+      <path d="M-78 4 q14 14 30 6" stroke="#7d160f" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </g>
+    <g transform="rotate(12)">
+      <rect x="8" y="-44" width="84" height="92" rx="40" fill="#b5281f"/>
+      <rect x="8" y="-44" width="84" height="92" rx="40" fill="none" stroke="#7d160f" stroke-width="3"/>
+      <rect x="28" y="34" width="58" height="30" rx="10" fill="#8f1c15"/>
+      <ellipse cx="64" cy="-8" rx="14" ry="22" fill="#d4453c" opacity="0.55"/>
+      <path d="M48 4 q14 14 30 6" stroke="#7d160f" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+  <text fill="#efe3cf" font-family="Oswald, Arial Black, sans-serif" font-size="33" font-weight="700" letter-spacing="2">
+    <textPath href="#rks-bottom" startOffset="50%" text-anchor="middle">REDZKI KLUB SPORTOWY</textPath>
+  </text>
+  <text x="200" y="350" text-anchor="middle" fill="#c5302a"
+        font-family="Anton, Oswald, Arial Black, sans-serif" font-size="34" letter-spacing="4">2009</text>
+</svg>
