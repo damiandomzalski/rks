@@ -63,6 +63,40 @@
     items.forEach(function (el) { el.classList.add('in'); });
   }
 
+  // Schedule switch (standard / holiday)
+  var schedule = document.getElementById('schedule');
+  if (schedule) {
+    var switchBtns = schedule.querySelectorAll('.schedule-switch__btn');
+    var panels = schedule.querySelectorAll('.schedule-panel');
+    var ready = false;
+
+    function showSchedule(target) {
+      switchBtns.forEach(function (b) {
+        var on = b.getAttribute('data-target') === target;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-selected', String(on));
+      });
+      panels.forEach(function (p) {
+        var on = p.id === target;
+        p.hidden = !on;
+        // A panel hidden on load is never seen by IntersectionObserver,
+        // so reveal its contents directly the first time it is shown.
+        if (on && ready) {
+          p.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+        }
+      });
+    }
+
+    switchBtns.forEach(function (b) {
+      b.addEventListener('click', function () { showSchedule(b.getAttribute('data-target')); });
+    });
+
+    // During the Polish summer break (Jun–Aug) open the holiday schedule by default.
+    var month = new Date().getMonth();
+    showSchedule(month >= 5 && month <= 7 ? 'schedule-holiday' : 'schedule-regular');
+    ready = true;
+  }
+
   // Current year
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
