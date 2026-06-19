@@ -218,38 +218,90 @@
         <h2 class="section__title">Kiedy trenujemy</h2>
         <p class="lead lead--center">Aktualny tygodniowy plan zajęć Redzkiego Klubu Sportowego.</p>
       </div>
-      <div class="schedule reveal">
-        <div class="schedule__day">
-          <h3>Poniedziałek</h3>
-          <div class="slot"><span class="slot__time">18:00–19:15</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa zaawansowana</span></div>
-          <div class="slot"><span class="slot__time">19:15–20:30</span><span class="slot__name slot--box">Boks</span><span class="slot__grp">grupa początkująca</span></div>
-        </div>
-        <div class="schedule__day">
-          <h3>Wtorek</h3>
-          <div class="slot"><span class="slot__time">18:30–19:45</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa początkująca</span></div>
-          <div class="slot"><span class="slot__time">19:45–20:45</span><span class="slot__name slot--mot">Trening motoryczny</span><span class="slot__grp">&nbsp;</span></div>
-        </div>
-        <div class="schedule__day">
-          <h3>Środa</h3>
-          <div class="slot"><span class="slot__time">18:00–19:15</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa zaawansowana</span></div>
-          <div class="slot"><span class="slot__time">19:15–20:30</span><span class="slot__name slot--box">Boks</span><span class="slot__grp">grupa początkująca</span></div>
-        </div>
-        <div class="schedule__day">
-          <h3>Czwartek</h3>
-          <div class="slot"><span class="slot__time">17:30–18:30</span><span class="slot__name slot--mot">Obwód</span><span class="slot__grp">&nbsp;</span></div>
-          <div class="slot"><span class="slot__time">18:30–19:45</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa początkująca</span></div>
-        </div>
-        <div class="schedule__day">
-          <h3>Piątek</h3>
-          <div class="slot"><span class="slot__time">18:00–19:15</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa zaawansowana</span></div>
-          <div class="slot"><span class="slot__time">19:15–20:30</span><span class="slot__name slot--box">Boks</span><span class="slot__grp">grupa początkująca</span></div>
-        </div>
-        <div class="schedule__day">
-          <h3>Sobota</h3>
-          <div class="slot"><span class="slot__time">9:00–10:00</span><span class="slot__name slot--mot">Trening motoryczny</span><span class="slot__grp">&nbsp;</span></div>
-          <div class="slot"><span class="slot__time">10:00–11:00</span><span class="slot__name slot--spar">Sparingi</span><span class="slot__grp">&nbsp;</span></div>
+      <div class="schedule-switch-wrap reveal">
+        <div class="schedule-switch" role="tablist" aria-label="Wybór grafiku zajęć">
+          <button type="button" class="schedule-switch__btn is-active" id="tab-regular"
+                  data-target="schedule-regular" role="tab" aria-selected="true" aria-controls="schedule-regular">
+            Standardowy
+          </button>
+          <button type="button" class="schedule-switch__btn" id="tab-holiday"
+                  data-target="schedule-holiday" role="tab" aria-selected="false" aria-controls="schedule-holiday">
+            <span class="schedule-switch__sun" aria-hidden="true"></span>Wakacyjny
+          </button>
         </div>
       </div>
+
+      <div class="schedule-panel" id="schedule-regular" role="tabpanel" aria-labelledby="tab-regular">
+        <div class="schedule reveal">
+          <div class="schedule__day">
+            <h3>Poniedziałek</h3>
+            <div class="slot"><span class="slot__time">18:00–19:15</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa zaawansowana</span></div>
+            <div class="slot"><span class="slot__time">19:15–20:30</span><span class="slot__name slot--box">Boks</span><span class="slot__grp">grupa początkująca</span></div>
+          </div>
+          <div class="schedule__day">
+            <h3>Wtorek</h3>
+            <div class="slot"><span class="slot__time">18:30–19:45</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa początkująca</span></div>
+            <div class="slot"><span class="slot__time">19:45–20:45</span><span class="slot__name slot--mot">Trening motoryczny</span><span class="slot__grp">&nbsp;</span></div>
+          </div>
+          <div class="schedule__day">
+            <h3>Środa</h3>
+            <div class="slot"><span class="slot__time">18:00–19:15</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa zaawansowana</span></div>
+            <div class="slot"><span class="slot__time">19:15–20:30</span><span class="slot__name slot--box">Boks</span><span class="slot__grp">grupa początkująca</span></div>
+          </div>
+          <div class="schedule__day">
+            <h3>Czwartek</h3>
+            <div class="slot"><span class="slot__time">17:30–18:30</span><span class="slot__name slot--mot">Obwód</span><span class="slot__grp">&nbsp;</span></div>
+            <div class="slot"><span class="slot__time">18:30–19:45</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa początkująca</span></div>
+          </div>
+          <div class="schedule__day">
+            <h3>Piątek</h3>
+            <div class="slot"><span class="slot__time">18:00–19:15</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa zaawansowana</span></div>
+            <div class="slot"><span class="slot__time">19:15–20:30</span><span class="slot__name slot--box">Boks</span><span class="slot__grp">grupa początkująca</span></div>
+          </div>
+          <div class="schedule__day">
+            <h3>Sobota</h3>
+            <div class="slot"><span class="slot__time">9:00–10:00</span><span class="slot__name slot--mot">Trening motoryczny</span><span class="slot__grp">&nbsp;</span></div>
+            <div class="slot"><span class="slot__time">10:00–11:00</span><span class="slot__name slot--spar">Sparingi</span><span class="slot__grp">&nbsp;</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="schedule-panel" id="schedule-holiday" role="tabpanel" aria-labelledby="tab-holiday" hidden>
+        <p class="schedule__note reveal"><span aria-hidden="true">☀️</span> Letni grafik zajęć — obowiązuje na czas wakacji.</p>
+        <div class="schedule reveal">
+          <div class="schedule__day">
+            <h3>Poniedziałek</h3>
+            <div class="slot"><span class="slot__time">18:00–19:15</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa zaawansowana</span></div>
+            <div class="slot"><span class="slot__time">19:15–20:30</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa początkująca</span></div>
+          </div>
+          <div class="schedule__day">
+            <h3>Wtorek</h3>
+            <div class="slot"><span class="slot__time">7:00–8:00</span><span class="slot__name"><span class="slot--kb">Kickboxing</span><span class="slot__slash"> / </span><span class="slot--box">Boks</span></span><span class="slot__grp">grupa łączona</span></div>
+            <div class="slot"><span class="slot__time">18:30–19:30</span><span class="slot__name slot--mot">Trening motoryczny</span><span class="slot__grp">&nbsp;</span></div>
+            <div class="slot"><span class="slot__time">19:30–20:45</span><span class="slot__name slot--box">Boks</span><span class="slot__grp">grupa początkująca</span></div>
+          </div>
+          <div class="schedule__day">
+            <h3>Środa</h3>
+            <div class="slot"><span class="slot__time">18:00–19:15</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa zaawansowana</span></div>
+            <div class="slot"><span class="slot__time">19:15–20:30</span><span class="slot__name slot--kb">Kickboxing</span><span class="slot__grp">grupa początkująca</span></div>
+          </div>
+          <div class="schedule__day">
+            <h3>Czwartek</h3>
+            <div class="slot"><span class="slot__time">18:30–19:30</span><span class="slot__name slot--mot">Trening motoryczny</span><span class="slot__grp">&nbsp;</span></div>
+            <div class="slot"><span class="slot__time">19:30–20:45</span><span class="slot__name slot--box">Boks</span><span class="slot__grp">grupa początkująca</span></div>
+          </div>
+          <div class="schedule__day">
+            <h3>Piątek</h3>
+            <div class="slot"><span class="slot__time">7:00–8:00</span><span class="slot__name"><span class="slot--kb">Kickboxing</span><span class="slot__slash"> / </span><span class="slot--box">Boks</span></span><span class="slot__grp">grupa łączona</span></div>
+            <div class="slot"><span class="slot__time">18:00–19:00</span><span class="slot__name slot--mot">Obwód</span><span class="slot__grp">&nbsp;</span></div>
+          </div>
+          <div class="schedule__day">
+            <h3>Sobota</h3>
+            <div class="slot"><span class="slot__time">10:00–11:00</span><span class="slot__name slot--spar">Sparingi</span><span class="slot__grp">&nbsp;</span></div>
+          </div>
+        </div>
+      </div>
+
       <p class="schedule__legend reveal">
         <span><i class="dot dot--kb"></i>Kickboxing</span>
         <span><i class="dot dot--box"></i>Boks</span>
@@ -266,6 +318,12 @@
         <h2 class="section__title">Zrób pierwszy krok</h2>
         <p class="lead">Przyjdź, spróbuj, pokochaj trening. Napisz do nas w social mediach
         lub wpadnij na salę — pierwszy krok do lepszej wersji siebie.</p>
+        <div class="first-free reveal">
+          <p class="first-free__eyebrow">Bez zobowiązań</p>
+          <p class="first-free__title">Pierwszy trening <span>gratis</span></p>
+          <p class="first-free__note">Na pierwszy trening <strong>nie potrzebujesz żadnego sprzętu</strong> —
+          wystarczy wygodny strój i woda. Resztą zajmiemy się my. Po prostu przyjdź i sprawdź, czy to sport dla Ciebie.</p>
+        </div>
         <ul class="contact-list">
           <li>
             <span class="contact-list__ic">📍</span>
