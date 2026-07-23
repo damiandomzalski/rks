@@ -97,6 +97,43 @@
     ready = true;
   }
 
+  var form = document.getElementById('signupForm');
+  var status = document.getElementById('signupStatus');
+
+  function showStatus(message, isError) {
+    if (!status) return;
+    status.textContent = message;
+    status.classList.toggle('form__status--error', !!isError);
+    status.hidden = false;
+  }
+
+  if (form && status && window.fetch) {
+    var submitBtn = form.querySelector('.form__submit');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Wysyłanie…';
+      fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      }).then(function (res) {
+        if (!res.ok) throw new Error(res.status);
+        form.reset();
+        showStatus('Dziękujemy! Zgłoszenie zostało wysłane — odezwiemy się, aby potwierdzić zapis.');
+      }).catch(function () {
+        showStatus('Nie udało się wysłać zgłoszenia. Spróbuj ponownie lub napisz do nas na Instagramie @rksreda.', true);
+      }).then(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Wyślij zgłoszenie';
+      });
+    });
+  }
+
+  if (window.location.search.indexOf('zapis=ok') !== -1) {
+    showStatus('Dziękujemy! Zgłoszenie zostało wysłane — odezwiemy się, aby potwierdzić zapis.');
+  }
+
   // Current year
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
