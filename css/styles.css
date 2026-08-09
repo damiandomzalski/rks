@@ -263,6 +263,13 @@ h1,h2,h3{font-family:'Anton',sans-serif;font-weight:400;line-height:1.05;letter-
 .pricing__list span{font-family:'Oswald',sans-serif;font-weight:500;font-size:1rem;color:var(--cream)}
 .pricing__list b{font-family:'Anton',sans-serif;font-weight:400;font-size:1.3rem;
   color:var(--red-bright);white-space:nowrap;letter-spacing:.5px}
+.pricing__deal{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  margin-top:1.2rem;padding:.8rem 1.1rem;border-radius:10px;
+  border:1px solid rgba(226,59,50,.4);
+  background:linear-gradient(135deg,rgba(197,48,42,.20),rgba(197,48,42,.04));
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:.95rem;color:var(--cream)}
+.pricing__deal b{font-family:'Anton',sans-serif;font-weight:400;font-size:1.15rem;
+  color:var(--red-bright);letter-spacing:.5px;white-space:nowrap}
 .pricing__note{margin-top:1.1rem;font-size:.84rem;color:var(--cream-dim);line-height:1.5}
 .form{background:var(--black-3);border:1px solid var(--line);border-radius:var(--r);
   padding:2rem 1.8rem;display:grid;gap:1.15rem}
