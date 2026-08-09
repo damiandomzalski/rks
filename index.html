@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=4">
+<link rel="stylesheet" href="css/styles.css?v=5">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -83,6 +83,7 @@
       <a href="#offer">Oferta</a>
       <a href="#coaches">Trenerzy</a>
       <a href="#schedule">Grafik</a>
+      <a href="#signup">Zapisy</a>
       <a href="#contact" class="btn btn--ghost btn--sm">Kontakt</a>
     </nav>
   </div>
@@ -100,7 +101,7 @@
       <p class="hero__lead reveal">Boks, kickboxing i trening motoryczny w Redzie. Trenuj z kadrą,
       która zna ten sport od podszewki — niezależnie od wieku i poziomu, u nas każdy znajdzie coś dla siebie.</p>
       <div class="hero__cta reveal">
-        <a href="#contact" class="btn btn--primary">Dołącz do nas</a>
+        <a href="#signup" class="btn btn--primary">Zapisz się na zajęcia</a>
         <a href="#schedule" class="btn btn--ghost">Zobacz grafik</a>
       </div>
       <ul class="hero__stats reveal">
@@ -323,29 +324,65 @@
     </div>
   </section>
 
-  <!-- Panel zapisów tymczasowo ukryty — przywrócić przy wrześniowym naborze. -->
-  <section class="section section--signup" id="signup" hidden>
+  <section class="section section--signup" id="signup">
     <div class="container">
       <div class="section__head reveal">
         <p class="kicker">Zapisy</p>
         <h2 class="section__title">Zapisz się na zajęcia</h2>
-        <p class="lead lead--center">Od września ruszają nabory do grup — miejsce możesz zarezerwować już dziś.
-        Wypełnij formularz, a odezwiemy się z potwierdzeniem zapisu.</p>
+        <p class="lead lead--center">Ruszają nabory do wszystkich grup — od maluchów po dorosłych.
+        Wybierz grupę, wypełnij formularz, a odezwiemy się z potwierdzeniem zapisu.</p>
       </div>
+
+      <div class="groups">
+        <article class="group reveal">
+          <span class="group__age">4–6 lat</span>
+          <h3 class="group__name">Maluch</h3>
+          <p class="group__time">Czwartki · 16:00</p>
+          <p class="group__desc">Trening ogólnorozwojowy oparty na grach i zabawach.</p>
+        </article>
+        <article class="group reveal">
+          <span class="group__age">7–9 lat</span>
+          <h3 class="group__name">Dzieci</h3>
+          <p class="group__time">Poniedziałki i środy · 17:00</p>
+          <p class="group__desc">Trening ogólnorozwojowy z elementami sportów walki.</p>
+        </article>
+        <article class="group reveal">
+          <span class="group__age">10–14 lat</span>
+          <h3 class="group__name">Dzieci</h3>
+          <p class="group__time">Wtorki i czwartki · 17:00</p>
+          <p class="group__desc">Kickboxing — technika, koordynacja i pewność siebie.</p>
+        </article>
+        <article class="group reveal">
+          <span class="group__age">15+</span>
+          <h3 class="group__name">Kickboxing</h3>
+          <p class="group__time">Poniedziałki i środy · 19:15</p>
+          <p class="group__desc">Grupa początkująca.</p>
+        </article>
+        <article class="group reveal">
+          <span class="group__age">15+</span>
+          <h3 class="group__name">Boks</h3>
+          <p class="group__time">Wtorki i czwartki · 18:00</p>
+          <p class="group__desc">Grupa początkująca.</p>
+        </article>
+        <article class="group reveal">
+          <span class="group__age">15+</span>
+          <h3 class="group__name">Trening motoryczny</h3>
+          <p class="group__desc">Siła, moc, wytrzymałość, gibkość, koordynacja, szybkość i mobility.</p>
+        </article>
+      </div>
+
       <div class="grid-2 signup__grid">
-        <div class="reveal">
-          <div class="first-free">
-            <p class="first-free__eyebrow">Nabór — wrzesień</p>
-            <p class="first-free__title">Zapisy <span>otwarte</span></p>
-            <p class="first-free__note">Liczba miejsc w grupach jest ograniczona — <strong>zapisz się online już teraz</strong>,
-            a pierwszy trening masz u nas zawsze gratis.</p>
-          </div>
-          <ul class="feature-list signup__list">
-            <li><span class="feature-list__dot"></span><div><strong>Boks</strong><p>Grupa początkująca i zaawansowana.</p></div></li>
-            <li><span class="feature-list__dot"></span><div><strong>Kickboxing</strong><p>Grupa początkująca i zaawansowana.</p></div></li>
-            <li><span class="feature-list__dot"></span><div><strong>Trening motoryczny</strong><p>Siła, wytrzymałość i wydolność.</p></div></li>
-            <li><span class="feature-list__dot"></span><div><strong>Trening personalny</strong><p>Indywidualnie, pod Twój cel.</p></div></li>
+        <div class="pricing reveal">
+          <p class="kicker">Cennik</p>
+          <ul class="pricing__list">
+            <li><span>Kickboxing lub boks</span><b>200 zł</b></li>
+            <li><span>Kickboxing lub boks + motoryka</span><b>300 zł</b></li>
+            <li><span>Motoryka</span><b>150 zł</b></li>
+            <li><span>Kickboxing + boks + motoryka</span><b>350 zł</b></li>
+            <li><span>Maluch</span><b>100 zł</b></li>
+            <li><span>Dzieci</span><b>150 zł</b></li>
           </ul>
+          <p class="pricing__note">Podane ceny to opłata miesięczna. Pierwszy trening zawsze gratis.</p>
         </div>
         <form class="form reveal" id="signupForm" action="https://formsubmit.co/redzki.klubsportowy@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="RKS Reda — nowe zgłoszenie z zapisów online">
@@ -354,15 +391,15 @@
           <input type="hidden" name="_next" value="https://rksreda.pl/?zapis=ok#signup">
           <input type="text" name="_honey" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form__field">
-            <label for="signup-activity">Zajęcia</label>
-            <select id="signup-activity" name="Zajęcia" required>
-              <option value="" disabled selected>Wybierz zajęcia</option>
-              <option>Boks — grupa początkująca</option>
-              <option>Boks — grupa zaawansowana</option>
-              <option>Kickboxing — grupa początkująca</option>
-              <option>Kickboxing — grupa zaawansowana</option>
-              <option>Trening motoryczny</option>
-              <option>Trening personalny</option>
+            <label for="signup-activity">Grupa</label>
+            <select id="signup-activity" name="Grupa" required>
+              <option value="" disabled selected>Wybierz grupę</option>
+              <option>Maluch (4–6 lat)</option>
+              <option>Dzieci (7–9 lat)</option>
+              <option>Dzieci (10–14 lat)</option>
+              <option>Kickboxing — początkująca (15+)</option>
+              <option>Boks — początkująca (15+)</option>
+              <option>Trening motoryczny (15+)</option>
             </select>
           </div>
           <div class="form__row">
@@ -372,7 +409,7 @@
             </div>
             <div class="form__field">
               <label for="signup-age">Wiek uczestnika</label>
-              <input type="number" id="signup-age" name="Wiek" min="5" max="99" inputmode="numeric" required>
+              <input type="number" id="signup-age" name="Wiek" min="4" max="99" inputmode="numeric" required>
             </div>
           </div>
           <div class="form__row">
@@ -453,6 +490,7 @@
       <a href="#offer">Oferta</a>
       <a href="#coaches">Trenerzy</a>
       <a href="#schedule">Grafik</a>
+      <a href="#signup">Zapisy</a>
       <a href="#contact">Kontakt</a>
     </nav>
     <div class="footer__social">
