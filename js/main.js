@@ -151,7 +151,7 @@
       }).then(function (res) {
         if (!res.ok) throw new Error(res.status);
         form.reset();
-        showStatus('Dziękujemy! Zgłoszenie zostało wysłane — odezwiemy się, aby potwierdzić zapis.');
+        showStatus('Dziękujemy! Zgłoszenie zostało wysłane.');
       }).catch(function () {
         showStatus('Nie udało się wysłać zgłoszenia. Spróbuj ponownie lub napisz do nas na Instagramie @rksreda.', true);
       }).then(function () {
@@ -162,7 +162,7 @@
   }
 
   if (window.location.search.indexOf('zapis=ok') !== -1) {
-    showStatus('Dziękujemy! Zgłoszenie zostało wysłane — odezwiemy się, aby potwierdzić zapis.');
+    showStatus('Dziękujemy! Zgłoszenie zostało wysłane.');
   }
 
   // Current year
