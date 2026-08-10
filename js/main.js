@@ -97,6 +97,10 @@
     ready = true;
   }
 
+  // Zapisy trafiają też do arkusza Google przez ten endpoint (Apps Script Web App).
+  // Puste = tylko mail przez FormSubmit.
+  var SIGNUP_SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyC4fksP1eG6fuqzhBfjKGWcZtYll3VHYu4Sh134P9udPO0EAnwb35wXMOgxcYua_8R2A/exec';
+
   var form = document.getElementById('signupForm');
   var status = document.getElementById('signupStatus');
 
@@ -107,12 +111,39 @@
     status.hidden = false;
   }
 
+  // Fire-and-forget: dopisz zgłoszenie do arkusza. Odpowiedzi nie czytamy
+  // (Web App nie zwraca nagłówków CORS) — potwierdzeniem odbioru jest mail.
+  function sendToSheet(f) {
+    if (!SIGNUP_SHEET_ENDPOINT) return;
+    function val(name) {
+      var el = f.querySelector('[name="' + name + '"]');
+      return el ? el.value : '';
+    }
+    try {
+      fetch(SIGNUP_SHEET_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          grupa: val('Grupa'),
+          imie: val('Imię i nazwisko'),
+          wiek: val('Wiek'),
+          telefon: val('Telefon'),
+          email: val('E-mail'),
+          uwagi: val('Uwagi'),
+          _honey: val('_honey')
+        })
+      });
+    } catch (err) { /* nie blokujemy wysyłki formularza */ }
+  }
+
   if (form && status && window.fetch) {
     var submitBtn = form.querySelector('.form__submit');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       submitBtn.disabled = true;
       submitBtn.textContent = 'Wysyłanie…';
+      sendToSheet(form);
       fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
