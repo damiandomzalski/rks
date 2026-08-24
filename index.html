@@ -231,20 +231,7 @@
         <h2 class="section__title">Kiedy trenujemy</h2>
         <p class="lead lead--center">Aktualny tygodniowy plan zajęć Redzkiego Klubu Sportowego.</p>
       </div>
-      <div class="schedule-switch-wrap reveal">
-        <div class="schedule-switch" role="tablist" aria-label="Wybór grafiku zajęć">
-          <button type="button" class="schedule-switch__btn is-active" id="tab-regular"
-                  data-target="schedule-regular" role="tab" aria-selected="true" aria-controls="schedule-regular">
-            Standardowy
-          </button>
-          <button type="button" class="schedule-switch__btn" id="tab-holiday"
-                  data-target="schedule-holiday" role="tab" aria-selected="false" aria-controls="schedule-holiday">
-            <span class="schedule-switch__sun" aria-hidden="true"></span>Wakacyjny
-          </button>
-        </div>
-      </div>
-
-      <div class="schedule-panel" id="schedule-regular" role="tabpanel" aria-labelledby="tab-regular">
+      <div class="schedule-panel" id="schedule-regular">
         <div class="schedule reveal">
           <div class="schedule__day">
             <h3>Poniedziałek</h3>
@@ -282,7 +269,8 @@
         </div>
       </div>
 
-      <div class="schedule-panel" id="schedule-holiday" role="tabpanel" aria-labelledby="tab-holiday" hidden>
+      <!-- Grafik wakacyjny ukryty ze strony — przywrócić na wakacje (razem z przełącznikiem i logiką w main.js). -->
+      <div class="schedule-panel" id="schedule-holiday" hidden>
         <p class="schedule__note reveal"><span aria-hidden="true">☀️</span> Letni grafik zajęć — obowiązuje na czas wakacji.</p>
         <div class="schedule reveal">
           <div class="schedule__day">
@@ -507,6 +495,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=5"></script>
+<script src="js/main.js?v=6"></script>
 </body>
 </html>
