@@ -109,6 +109,10 @@
       e.preventDefault();
       submitBtn.disabled = true;
       submitBtn.textContent = 'Wysyłanie…';
+      // Ustaw Reply-To na adres zapisującego się — odpowiedź na maila trafi do niego.
+      var replyto = form.querySelector('[name="_replyto"]');
+      var emailField = form.querySelector('[name="E-mail"]');
+      if (replyto && emailField) replyto.value = emailField.value;
       sendToSheet(form);
       fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
         method: 'POST',
